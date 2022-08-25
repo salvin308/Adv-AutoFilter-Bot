@@ -5,7 +5,7 @@ except Exception as custom_caption: print(f"⚠️ Custom Caption Invalid {custo
 
 @Client.on_message(pyrogram.filters.channel)
 def edit_caption(bot, update: pyrogram.types.Message):
-  motech, _ = get_file_details(update)
+  movie, _ = get_file_details(update)
   try:
       try: update.edit(custom_caption.format(file_name=movie.file_name))
       except pyrogram.errors.FloodWait as FloodWait:
