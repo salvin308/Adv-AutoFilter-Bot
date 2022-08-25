@@ -1,5 +1,8 @@
 import pyrogram, os, asyncio
 
+try: custom_caption = os.environ.get("custom_caption", "`{file_name}`")
+except Exception as custom_caption: print(f"⚠️ Custom Caption Invalid {custom_caption}")
+
 @Client.on_message(pyrogram.filters.channel)
 def edit_caption(bot, update: pyrogram.types.Message):
   motech, _ = get_file_details(update)
