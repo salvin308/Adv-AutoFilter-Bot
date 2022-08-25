@@ -1,4 +1,4 @@
-import pyrogram, asyncio
+import pyrogram, os, asyncio
 
 @Client.on_message(pyrogram.filters.channel)
 def edit_caption(bot, update: pyrogram.types.Message):
